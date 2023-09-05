@@ -8,10 +8,20 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'storybook/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+   inputs:
+      story_title:
+        description: 'A short title for the story'
+        required: true
+        default: 'Default Title'
+      author_name:
+        description: 'The author''s name'
+        required: true
+        default: 'Anonymous'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
