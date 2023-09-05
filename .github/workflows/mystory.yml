@@ -36,11 +36,13 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Create Story
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "Once upon a time in a faraway land"
+          echo "${{ github.event.inputs.story_title }} was written by ${{ github.event.inputs.author_name }}"
+          echo "This whimsical tale takes you on a journey through a magical forest where every flower could talk."
+          echo "Will you explore its secrets?"
